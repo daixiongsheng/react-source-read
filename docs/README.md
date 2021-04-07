@@ -1,7 +1,19 @@
-# Hello VuePress   333
+# 开始
 
+<!-- <<< @/docs/.vuepress/config.js{12-20} -->
 
-444
+<ClientOnly>
+  <HelloWorld />
+</ClientOnly>
 
+<span v-for="i in 3">{{ i }} </span>
 
-666
+<!-- {{ $page }} -->
+
+::: v-pre
+`{{ This will be displayed as-is }}`
+:::
+
+```js
+{{ This will be displayed as-is }}
+```

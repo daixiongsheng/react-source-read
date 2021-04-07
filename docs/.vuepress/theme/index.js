@@ -1,5 +1,7 @@
+const path = require("path")
+
 module.exports = (themeConfig, ctx) => {
-    return {
-        // ...
-    };
+  return {
+    extend: "@vuepress/theme-default"
+  }
 }
