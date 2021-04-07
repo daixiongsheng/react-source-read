@@ -1,6 +1,6 @@
 # 开始
 
-<!-- <<< @/docs/.vuepress/config.js{12-20} -->
+<<< @/docs/.vuepress/config.js{12-20}
 
 <ClientOnly>
   <HelloWorld />
