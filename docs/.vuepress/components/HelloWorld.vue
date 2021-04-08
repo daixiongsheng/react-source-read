@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   mounted() {
     return void 0
   }

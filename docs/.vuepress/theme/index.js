@@ -1,7 +1,10 @@
-const path = require("path")
+const path = require('path')
 
 module.exports = (themeConfig, ctx) => {
   return {
-    extend: "@vuepress/theme-default"
+    extend: '@vuepress/theme-default',
+    plugins: [
+      '@vuepress/back-to-top',
+    ]
   }
 }

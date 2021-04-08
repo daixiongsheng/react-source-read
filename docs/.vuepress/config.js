@@ -1,28 +1,26 @@
-const { resolve, join, dirname } = require("path")
-const fs = require("fs")
+const { resolve, join, dirname } = require('path')
+const fs = require('fs')
 // const sidebar = []
-const root = join(__dirname, "../")
+const root = join(__dirname, '../')
 function resolveSidebar1(sidebar, path) {
   const files = fs.readdirSync(path)
   for (const file of files) {
-    console.log(file)
     if (!/^\w+/.test(file) || /node_module/.test(file)) {
       continue
     }
     const side = {}
-    const name = file.split(".")[0]
+    const name = file.split('.')[0]
     side.title = name
     if (
-      name.toLowerCase().includes("readme") ||
-      name.toLowerCase().includes("index")
+      name.toLowerCase().includes('readme') ||
+      name.toLowerCase().includes('index')
     ) {
-      side.path = path.replace(root, "") + "/"
+      side.path = path.replace(root, '') + '/'
     } else {
-      side.path = path.replace(root, "") + "/" + name
+      side.path = path.replace(root, '') + '/' + name
     }
-    if (fs.lstatSync(path + "/" + file).isDirectory() && /^\w+/.test(file)) {
-      console.log(sidebar)
-      resolveSidebar1((side.children = []), path + "/" + file)
+    if (fs.lstatSync(path + '/' + file).isDirectory() && /^\w+/.test(file)) {
+      resolveSidebar1((side.children = []), path + '/' + file)
     }
     sidebar.push(side)
   }
@@ -34,22 +32,22 @@ function resolveSidebar(path) {
     if (!/^\w+/.test(file) || /node_module/.test(file)) {
       continue
     }
-    if (fs.lstatSync(path + "/" + file).isDirectory() && /^\w+/.test(file)) {
-      resolveSidebar(path + "/" + file)
+    if (fs.lstatSync(path + '/' + file).isDirectory() && /^\w+/.test(file)) {
+      resolveSidebar(path + '/' + file)
     } else {
       const side = {}
-      const name = file.split(".")[0]
+      const name = file.split('.')[0]
       side.title = name
       if (
-        name.toLowerCase().includes("readme") ||
-        name.toLowerCase().includes("index")
+        name.toLowerCase().includes('readme') ||
+        name.toLowerCase().includes('index')
       ) {
-        sidebar.push(path.replace(root, "") + "/")
+        sidebar.push(path.replace(root, '') + '/')
       } else {
-        sidebar.push(path.replace(root, "") + "/" + name)
+        sidebar.push(path.replace(root, '') + '/' + name)
       }
-      if (fs.lstatSync(path + "/" + file).isDirectory() && /^\w+/.test(file)) {
-        resolveSidebar(path + "/" + file)
+      if (fs.lstatSync(path + '/' + file).isDirectory() && /^\w+/.test(file)) {
+        resolveSidebar(path + '/' + file)
       }
     }
   }
@@ -66,18 +64,18 @@ const sidebar = [
       '/base/jsx',
       '/base/api',
       '/base/react-element',
-      '/base/whole-process',
+      '/base/whole-process'
     ]
   },
   '/dataBase/',
   '/react-dom/',
-  '/react-reconciler/',
-];
+  '/react-reconciler/'
+]
 
 module.exports = {
-  base: "/react-source-read/",
-  title: "React 源码阅读",
-  description: "React 源码阅读",
+  base: '/react-source-read/',
+  title: 'React 源码阅读',
+  description: 'React 源码阅读',
   // dest: './dist',
   configureWebpack: (config, isServer) => {
     if (!isServer) {
@@ -85,7 +83,8 @@ module.exports = {
       const { alias = {} } = config.resolve
       config.resolve.alias = {
         ...alias,
-        "@img": resolve(__dirname, "public/img")
+        '@img': resolve(__dirname, 'public/img'),
+        '@code': resolve(__dirname, 'public/code')
       }
     }
   },
@@ -96,12 +95,12 @@ module.exports = {
     lineNumbers: true
   },
   themeConfig: {
-    logo: "/img/logo.png",
+    logo: '/img/logo.png',
     sidebar,
-    repo: "daixiongsheng/react-source-read",
-    repoLabel: "查看源码",
-    lastUpdated: "Last Updated",
-    smoothScroll: true,
+    repo: 'daixiongsheng/react-source-read',
+    repoLabel: '查看源码',
+    lastUpdated: 'Last Updated',
+    smoothScroll: true
     // locales: {
     //   "/": {
     //     selectText: "选择语言",
