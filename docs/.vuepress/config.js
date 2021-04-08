@@ -1,6 +1,6 @@
 const { resolve, join, dirname } = require("path")
 const fs = require("fs")
-const sidebar = []
+// const sidebar = []
 const root = join(__dirname, "../")
 function resolveSidebar1(sidebar, path) {
   const files = fs.readdirSync(path)
@@ -55,14 +55,24 @@ function resolveSidebar(path) {
   }
 }
 
-resolveSidebar(root)
+// resolveSidebar(root)
 
-// const sidebar = [
-//   '/',
-//   '/api/',
-//   '/guide/',
-//   '/guide/one',
-// ];
+const sidebar = [
+  '/',
+  '/guide/',
+  {
+    title: '基础',
+    children: [
+      '/base/jsx',
+      '/base/api',
+      '/base/react-element',
+      '/base/whole-process',
+    ]
+  },
+  '/dataBase/',
+  '/react-dom/',
+  '/react-reconciler/',
+];
 
 module.exports = {
   base: "/react-source-read/",

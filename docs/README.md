@@ -1,19 +1,16 @@
-# 开始
+---
+title: 介绍
+---
 
-<<< @/docs/.vuepress/config.js{12-20}
+更新中...
 
+<!-- <<< @/docs/.vuepress/config.js{12-20} -->
+<!--
 <ClientOnly>
   <HelloWorld />
-</ClientOnly>
-
-<span v-for="i in 3">{{ i }} </span>
-
-<!-- {{ $page }} -->
+</ClientOnly> -->
+<!--
 
 ::: v-pre
 `{{ This will be displayed as-is }}`
-:::
-
-```js
-{{ This will be displayed as-is }}
-```
+::: -->
