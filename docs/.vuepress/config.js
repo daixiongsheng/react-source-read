@@ -98,11 +98,10 @@ module.exports = {
   themeConfig: {
     logo: "/img/logo.png",
     sidebar,
-    // sidebar: 'auto',
-    // sidebar: ["/", "/guide/one", ["/api", "React API"]],
     repo: "daixiongsheng/react-source-read",
     repoLabel: "查看源码",
-    lastUpdated: "Last Updated"
+    lastUpdated: "Last Updated",
+    smoothScroll: true,
     // locales: {
     //   "/": {
     //     selectText: "选择语言",
