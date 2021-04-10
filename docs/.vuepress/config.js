@@ -76,6 +76,9 @@ module.exports = {
   base: '/react-source-read/',
   title: 'React 源码阅读',
   description: 'React 源码阅读',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   // dest: './dist',
   configureWebpack: (config, isServer) => {
     if (!isServer) {
