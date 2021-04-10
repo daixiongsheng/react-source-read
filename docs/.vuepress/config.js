@@ -1,4 +1,5 @@
-const { resolve, join, dirname } = require('path')
+const { resolve, join } = require('path');
+const webpack = require('webpack')
 const fs = require('fs')
 // const sidebar = []
 const root = join(__dirname, '../')
@@ -79,7 +80,6 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
-  // dest: './dist',
   configureWebpack: (config, isServer) => {
     if (!isServer) {
       // 修改客户端的 webpack 配置
@@ -104,71 +104,5 @@ module.exports = {
     repoLabel: '查看源码',
     lastUpdated: 'Last Updated',
     smoothScroll: true
-    // locales: {
-    //   "/": {
-    //     selectText: "选择语言",
-    //     label: "简体中文",
-    //     smoothScroll: true,
-    //     // Service Worker 的配置
-    //     serviceWorker: {
-    //       updatePopup: {
-    //         message: "发现新内容可用.",
-    //         buttonText: "刷新"
-    //       }
-    //     },
-    //     nav: [
-    //       {
-    //         text: 'Guide',
-    //         link: '/guide/'
-    //       },
-    //       {
-    //         text: 'Migrating from v14',
-    //         link: '/migrating.md'
-    //       }
-    //     ],
-    //     sidebar: [
-    //       '/',
-    //       '/guide/',
-    //       '/guide/one',
-    //       '/api/'
-    //     ]
-    //   },
-    //   "/en/": {
-    //     selectText: "Languages",
-    //     label: "English",
-    //     ariaLabel: "Languages",
-    //     editLinkText: "Edit this page on GitHub",
-    //     serviceWorker: {
-    //       updatePopup: {
-    //         message: "New content is available.",
-    //         buttonText: "Refresh"
-    //       }
-    //     },
-    //     algolia: {},
-    //     nav: [{ text: "Nested", link: "/nested/", ariaLabel: "Nested" }],
-    //     sidebar: {
-    //       "/": [
-    //         /* ... */
-    //       ],
-    //       "/nested/": [
-    //         /* ... */
-    //       ]
-    //     }
-    //   }
-    // }
   }
-  // locales: {
-  //   // 键名是该语言所属的子路径
-  //   // 作为特例，默认语言可以使用 '/' 作为其路径。
-  //   "/": {
-  //     lang: "zh-CN", // 将会被设置为 <html> 的 lang 属性
-  //     title: "react 源码阅读",
-  //     description: "react 源码阅读"
-  //   },
-  //   "/en/": {
-  //     lang: "en-US",
-  //     title: "react source code read",
-  //     description: "react source code read"
-  //   }
-  // }
 }
