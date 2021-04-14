@@ -1,4 +1,5 @@
-#! /bin/zsh
+#! /bin/bash
+git config user.email daixiongsheng@gmail.com
 git add .
 m=$1
 date=$(date "+%Y-%m-%d-%H:%M:%S")
