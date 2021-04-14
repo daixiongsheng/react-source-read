@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+const { resolve } = require('path')
 
 const sidebar = [
   '/',
@@ -21,14 +21,12 @@ module.exports = {
   base: '/react-source-read/',
   title: 'React 源码阅读',
   description: 'React 源码阅读',
-  head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
-  ],
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   configureWebpack: (config, isServer) => {
     return {
       resolve: {
         alias: {
-          '@img': resolve(__dirname, 'public/img'),
+          '@img': resolve(__dirname, 'public/img')
         }
       }
     }

@@ -6,7 +6,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "prettier": "prettier --write './docs/**/*.{js,jsx,tsx,ts,less,md,json,vue}'"
+    "prettier": "prettier --write './docs/**/*.{js,jsx,tsx,ts,md,json,vue}'"
   },
   "repository": {
     "type": "git",
