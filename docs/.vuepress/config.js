@@ -42,7 +42,7 @@ module.exports = {
     sidebar,
     repo: 'daixiongsheng/react-source-read',
     repoLabel: '查看源码',
-    lastUpdated: 'Last Updated',
+    // lastUpdated: 'Last Updated',
     smoothScroll: true
   }
 }
